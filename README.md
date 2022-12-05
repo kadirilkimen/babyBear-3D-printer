@@ -1,5 +1,5 @@
 # babyBear-3D-printer
-## A very small FDM printer!
+## A very small FDM printer! that slightly smaller than an A4 paper including a spool of filament.
 Just the footprint is small. It has a 160mm diameter build plate and up to 300mm work height.
 It's a complete 3D printer with quick change tool head. So the plan is making it a laser cutter and cnc milling machine along with printing.
 
