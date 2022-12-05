@@ -9,7 +9,9 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ## Great people helping me on this project.
 
 Most of the babyBear components donated by V-slot Poland.
+
 Filaments and some local logistics provided by RE3D filaments.
+
 If you are located in Europe, I recommend you to visit their website.
 
 https://vslot-poland.com/en_US/index
