@@ -2,8 +2,15 @@
 
 
 ## **How much does it cost to build?**
-It would cost somewhere around 250 to 400 USD.
+It would cost somewhere around 200 to 400 USD.
 It depends on your purchasing decisions and market situation.
+Please keep in mind, some small items like nuts and bolts mostly come in packs not the exact amount if the 
+
+## **Does the babyBear have a heated bed?**
+Unfortunately, current version doesn't have a heated bed.
+I have been successful to transfer power to the infinitely rotatable printing bed.
+However, reading back the temperature is a big issue. Both standard 3D printer electronics and software is not suitable for this purpose.
+I am working on a marlin update and an electronic solution.
 
 
 ## **What skills do I need to build the babybear?**
