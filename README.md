@@ -5,6 +5,7 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 
 <img src="/Media/babyBear.jpg" alt="Alt text" title="Optional title">
 
+## <span style="color:#F00">All the STL and BOM files are in progress until 17 dec. 2022</span>
 
 ## Great people who helped me with this project.
 
