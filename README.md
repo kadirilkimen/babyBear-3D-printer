@@ -10,7 +10,7 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 <img src="/Media/babyBear.jpg" alt="Alt text" title="Optional title">
 
 
-## Great people who helped me with this project.
+## Great people who helped me on this project.
 
 Most of the babyBear components donated by V-slot Poland.
 
