@@ -3,7 +3,7 @@
 
 
 ## **Components**
-Component connections are carefully selected. But I didn't buy them directly.
+Component links are carefully selected. But I didn't buy them directly.
 Most of the babyBear components donated by V-slot Poland.
 The rest were collected from local stores.
 
@@ -23,7 +23,6 @@ There are different fastener grades. Usually you can see 8.8, 10.9, 12.9 etc.
 Higher the number means stronger the fastener.
 I recommend fasteners grade higher than 8.8 for this project.
 
-
 ## **Tools**
-You will need those tools to build the babyBear.
+You probably will need those tools to build the babyBear.
 They are also common tools for 3D printing and such projects.

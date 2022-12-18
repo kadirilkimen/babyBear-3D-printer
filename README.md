@@ -1,13 +1,16 @@
 # babyBear-3D-printer
 ## A very small 3D printer! that slightly smaller than an A4 paper including a spool of filament.
-```diff
-- All the STL and BOM files are in progress until 17 dec. 2022
-```
+
 Just the footprint is small. It has a 160mm diameter build plate and up to 300mm work height.
 It's a complete 3D printer with quick change tool head. So the plan is making it a laser cutter and cnc milling machine along with printing.
 
+```diff
++ All STL and BOM files have been updated.
++ Firmware is configured for the babyBear, based on MKS robin nano v3 controllers, TMC2209 drivers and TS35 display.
+```
 
-<img src="/Media/babyBear.jpg" alt="Alt text" title="Optional title">
+
+<img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
 
 
 ## Great people who helped me on this project.
