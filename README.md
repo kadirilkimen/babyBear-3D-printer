@@ -1,4 +1,4 @@
-# babyBear-3D-printer
+# the babyBear 3D Printer
 ## A very small 3D printer! that slightly smaller than an A4 paper including a spool of filament.
 
 Just the footprint is small. It has a 160mm diameter build plate and up to 300mm work height.
