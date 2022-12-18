@@ -6,7 +6,7 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 
 ```diff
 + All STL and BOM files have been updated.
-+ Firmware is configured for the babyBear, based on MKS robin nano v3 controllers, TMC2209 drivers and TS35 display.
++ Firmware is configured for the babyBear
 ```
 
 
