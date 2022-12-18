@@ -9,7 +9,6 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 + Firmware is configured for the babyBear
 ```
 
-
 <img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
 
 
