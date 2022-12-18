@@ -1,0 +1,70 @@
+%!PS-Adobe-3.0
+%%Creator:Adobe Illustrator (TM) 3.200000 Exported from CorelDRAW 2020 (64-Bit)
+%%Title:workbed.ai
+%%CreationDate:
+%%Canvassize:16383
+%%BoundingBox:70 194 524 648
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentNeededResources: procset Adobe_packedarray 2.0 0
+%%+ procset Adobe_cmykcolor 1.1 0
+%%+ procset Adobe_cshow 1.1 0
+%%+ procset Adobe_customcolor 1.0 0
+%%+ procset Adobe_typography_AI3 1.0 1
+%%+ procset Adobe_pattern_AI3 1.0 1
+%%+ procset Adobe_IllustratorA_AI3 1.0 1
+%AI3_ColorUsage: Color
+%AI3_Cropmarks:0 0 595 842
+%AI3_TileBox:0 0 595 842
+%AI3_TemplateBox:297 421 297 421
+%AI3_DocumentPreview: None
+%AI5_ArtSize: 595 842 
+%AI5_NumLayers: 1
+%AI5_FileFormat 2.0
+%AI9_ColorModel: 2
+%AI12_CMSettings: 00.MS
+%%EndComments
+%%BeginProlog
+%%IncludeResource: procset Adobe_packedarray 2.0 0
+Adobe_packedarray /initialize get exec
+%%IncludeResource: procset Adobe_cmykcolor 1.1 0
+%%IncludeResource: procset Adobe_cshow 1.1 0
+%%IncludeResource: procset Adobe_customcolor 1.0 0
+%%IncludeResource: procset Adobe_typography_AI3 1.0 1
+%%IncludeResource: procset Adobe_pattern_AI3 1.0 1
+%%IncludeResource: procset Adobe_IllustratorA_AI3 1.0 1
+%%EndProlog
+%%BeginSetup
+Adobe_cmykcolor /initialize get exec
+Adobe_cshow /initialize get exec
+Adobe_customcolor /initialize get exec
+Adobe_typography_AI3 /initialize get exec
+Adobe_pattern_AI3 /initialize get exec
+Adobe_IllustratorA_AI3 /initialize get exec
+%%EndSetup
+1 XR
+0 R
+0.9500 0.9500 0.4500 0.9500 K
+0 1 0 0 0 Xy
+0 J
+0 j
+22.9256 M
+0.5669 w
+[]0 d
+297.4360 194.1585 m
+422.3373 194.1585 524.2073 296.0286 524.2073 420.9301 c
+524.2073 545.8314 422.3373 647.7015 297.4360 647.7015 c
+172.5344 647.7015 70.6643 545.8314 70.6643 420.9301 c
+70.6643 296.0286 172.5344 194.1585 297.4360 194.1585 c
+s
+%%PageTrailer
+gsave annotatepage grestore showpage
+%%Trailer
+Adobe_IllustratorA_AI3 /terminate get exec
+Adobe_pattern_AI3 /terminate get exec
+Adobe_typography_AI3 /terminate get exec
+Adobe_customcolor /terminate get exec
+Adobe_cshow /terminate get exec
+Adobe_cmykcolor /terminate get exec
+Adobe_packedarray /terminate get exec
+%%EOF
+
