@@ -7,6 +7,9 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ```diff
 + All STL and BOM files have been updated.
 + Firmware is configured for the babyBear
+
+! A laser cut toolhead will be added in a few weeks.
+! A cnc milling toolhead will be added until February.
 ```
 
 <img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
