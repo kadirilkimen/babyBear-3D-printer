@@ -1,6 +1,4 @@
-# Printing recommendations
-
-## Important recommendations
+# Read this before start printing
 
 ### Material
 Original prototype printed with PETG filament.
