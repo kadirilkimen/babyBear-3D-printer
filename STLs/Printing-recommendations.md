@@ -36,6 +36,17 @@
 - Hotend-tool-socket.stl
 - Tool-nut.stl
 - Z-axis-belt-clamps.stl
+
+## ---------------------------------------------------
+
+##  Z Drive Pulley
+### It is difficult to print GT2 pulley teeth with 0.4mm nozzle but not impossible. 0.2mm is best radius you can get with 0.4mm nozzle it creates more smooth teeth profile than actual GT2 profile. The settings below helps to get better GT2 profile. I printed the prototype with 0.4mm and so far works fine. If you have a chance, I recommend to print with a smaller nozzle.
+- 100% solid
+- Layer height: 0.1mm
+- Line width : 0.4mm or less
+- Strength/surface : 50%
+- Print speed : 75mm/s or less
+#### ------------------------
 - Z-drive-pulley-pin.stl
 - Z-drive-pulley.stl
 
@@ -67,7 +78,7 @@
 
 ## ---------------------------------------------------
 ## Lightweight parts
-- Strength/surface : 0%
+- Strength/surface : 25%
 #### ------------------------
 - Bearing-cover.stl
 - Bottom-cover.stl
