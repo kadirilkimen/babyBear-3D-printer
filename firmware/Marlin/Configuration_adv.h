@@ -2708,7 +2708,7 @@
  */
 #if HAS_TRINAMIC_CONFIG || HAS_TMC26X
 
-  // #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
+  #define HOLD_MULTIPLIER    1.0  // Scales down the holding current from run current
 
   /**
    * Interpolate microsteps to 256
@@ -2759,7 +2759,7 @@
   #if AXIS_IS_TMC_CONFIG(Z)
     #define Z_CURRENT       1000
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     16
+    #define Z_MICROSTEPS     4
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  false
@@ -2858,7 +2858,7 @@
 
   #if AXIS_IS_TMC_CONFIG(E0)
     #define E0_CURRENT      1000
-    #define E0_MICROSTEPS    16
+    #define E0_MICROSTEPS    8
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
     //#define E0_INTERPOLATE false
