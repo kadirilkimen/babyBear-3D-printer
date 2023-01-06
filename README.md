@@ -6,11 +6,16 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 
 ```diff
 + All STL and BOM files have been updated.
-+ Firmware is configured for the babyBear
 
 ! A laser cut toolhead will be added in a few weeks.
 ! A cnc milling toolhead will be added until February.
 ```
+## Important information about the firmware
+The firmware here is a cartesian setup and requires post-processing using this tool :
+https://kadirilkimen.com/thepolarbear/polartools/
+
+Marlin polar kinematics are in development and will be uploaded soon. Then it will be possible to use g-codes without post-processing.
+
 
 <img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
 
