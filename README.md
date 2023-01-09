@@ -10,7 +10,7 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ! A laser cut toolhead will be added in a few weeks.
 ! A cnc milling toolhead will be added until February.
 ```
-## Important information about the firmware
+# Firmware is ready!
 Now polar coordinates calculated in the firmware.
 You can just slice it and send to the machine.
 
