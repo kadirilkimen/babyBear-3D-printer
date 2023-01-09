@@ -11,11 +11,8 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ! A cnc milling toolhead will be added until February.
 ```
 ## Important information about the firmware
-The firmware here is a cartesian setup and requires post-processing using this tool :
-https://kadirilkimen.com/thepolarbear/polartools/
-
-Marlin polar kinematics are in development and will be uploaded soon. Then it will be possible to use g-codes without post-processing.
-
+Now polar coordinates calculated in the firmware.
+You can just slice it and send to the machine.
 
 <img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
 
