@@ -198,13 +198,12 @@ float Planner::mm_per_step[DISTINCT_AXES];      // (mm) Millimeters per step
   constexpr bool Planner::leveling_active;
 #endif
 
-skew_factor_t Planner::skew_factor; // Initialized by settings.load()
+#if ENABLED(SKEW_CORRECTION)
+  skew_factor_t Planner::skew_factor; // Initialized by settings.load()
+#endif
 
 #if ENABLED(AUTOTEMP)
-  celsius_t Planner::autotemp_max = 250,
-            Planner::autotemp_min = 210;
-  float Planner::autotemp_factor = 0.1f;
-  bool Planner::autotemp_enabled = false;
+  autotemp_t Planner::autotemp = { AUTOTEMP_MIN, AUTOTEMP_MAX, AUTOTEMP_FACTOR, false };
 #endif
 
 // private:
@@ -1434,8 +1433,8 @@ void Planner::check_axes_activity() {
   #if ENABLED(AUTOTEMP_PROPORTIONAL)
     void Planner::_autotemp_update_from_hotend() {
       const celsius_t target = thermalManager.degTargetHotend(active_extruder);
-      autotemp_min = target + AUTOTEMP_MIN_P;
-      autotemp_max = target + AUTOTEMP_MAX_P;
+      autotemp.min = target + AUTOTEMP_MIN_P;
+      autotemp.max = target + AUTOTEMP_MAX_P;
     }
   #endif
 
@@ -1446,8 +1445,8 @@ void Planner::check_axes_activity() {
    */
   void Planner::autotemp_update() {
     _autotemp_update_from_hotend();
-    autotemp_factor = TERN(AUTOTEMP_PROPORTIONAL, AUTOTEMP_FACTOR_P, 0);
-    autotemp_enabled = autotemp_factor != 0;
+    autotemp.factor = TERN(AUTOTEMP_PROPORTIONAL, AUTOTEMP_FACTOR_P, 0);
+    autotemp.enabled = autotemp.factor != 0;
   }
 
   /**
@@ -1457,13 +1456,13 @@ void Planner::check_axes_activity() {
   void Planner::autotemp_M104_M109() {
     _autotemp_update_from_hotend();
 
-    if (parser.seenval('S')) autotemp_min = parser.value_celsius();
-    if (parser.seenval('B')) autotemp_max = parser.value_celsius();
+    if (parser.seenval('S')) autotemp.min = parser.value_celsius();
+    if (parser.seenval('B')) autotemp.max = parser.value_celsius();
 
     // When AUTOTEMP_PROPORTIONAL is enabled, F0 disables autotemp.
     // Normally, leaving off F also disables autotemp.
-    autotemp_factor = parser.seen('F') ? parser.value_float() : TERN(AUTOTEMP_PROPORTIONAL, AUTOTEMP_FACTOR_P, 0);
-    autotemp_enabled = autotemp_factor != 0;
+    autotemp.factor = parser.seen('F') ? parser.value_float() : TERN(AUTOTEMP_PROPORTIONAL, AUTOTEMP_FACTOR_P, 0);
+    autotemp.enabled = autotemp.factor != 0;
   }
 
   /**
@@ -1474,8 +1473,8 @@ void Planner::check_axes_activity() {
   void Planner::autotemp_task() {
     static float oldt = 0.0f;
 
-    if (!autotemp_enabled) return;
-    if (thermalManager.degTargetHotend(active_extruder) < autotemp_min - 2) return; // Below the min?
+    if (!autotemp.enabled) return;
+    if (thermalManager.degTargetHotend(active_extruder) < autotemp.min - 2) return; // Below the min?
 
     float high = 0.0f;
     for (uint8_t b = block_buffer_tail; b != block_buffer_head; b = next_block_index(b)) {
@@ -1486,8 +1485,8 @@ void Planner::check_axes_activity() {
       }
     }
 
-    float t = autotemp_min + high * autotemp_factor;
-    LIMIT(t, autotemp_min, autotemp_max);
+    float t = autotemp.min + high * autotemp.factor;
+    LIMIT(t, autotemp.min, autotemp.max);
     if (t < oldt) t = t * (1.0f - (AUTOTEMP_OLDWEIGHT)) + oldt * (AUTOTEMP_OLDWEIGHT);
     oldt = t;
     thermalManager.setTargetHotend(t, active_extruder);
@@ -3168,6 +3167,48 @@ bool Planner::buffer_line(const xyze_pos_t &cart, const_feedRate_t fr_mm_s
       const float duration_recip = hints.inv_duration ?: fr_mm_s / ph.millimeters;
       const xyz_pos_t diff = delta - position_float;
       const feedRate_t feedrate = diff.magnitude() * duration_recip;
+    #elif ENABLED(POLAR_FEEDRATE_SCALING)
+      /**
+       * Polar axis near ZERO movements problem
+       * --------------------------------------------------------
+       * 3D printing:
+       * Movements very close to the center of the polar axis spend more time than other movements.
+       * This brief delay results in more material deposition due to the pressure in the nozzle.
+       * 
+       * Current Kinematics and feedrate scaling deals with this by making the movement as fast as possible.
+       * It works for slow movements but doesn't work well with fast ones.
+       * A more complicated extrusion compensation must be implemented.
+       * 
+       * Ideally, it should estimate that a long rotation near the center is ahead and will cause unwanted deposition.
+       * Therefore it can compensate the extrusion beforehand.   
+       * 
+       * Laser cutting:
+       * Same thing would be a problem for laser engraving too. As it spends time rotating at the center point,
+       * more likely it will burn more material than it should.
+       * Therefore similar compensation would be implemented for laser cutting operations. 
+       * 
+       * Milling:
+       * This shouldn't be a problem for cutting/milling operations.
+       */
+
+      feedRate_t calculated_feedrate = fr_mm_s;
+      const xyz_pos_t diff = delta - position_float;
+      if(!NEAR_ZERO(diff.b)) {
+          if(delta.a <= POLAR_FAST_RADIUS ) {
+            calculated_feedrate = settings.max_feedrate_mm_s[Y_AXIS];
+          } else {
+              // normalized vector of movement.
+              const float diffBLength = ABS( ( 2 * PI * diff.a ) * ( diff.b / 360 ) );
+              const float diffTheta = DEGREES(ATAN2(diff.a, diffBLength));
+              const float normalizedTheta = 1-( ABS( diffTheta>90.0? 180.0 - diffTheta:diffTheta ) /90.0);
+
+              // normalized position along the radius.
+              float radiusRatio = POLAR_PRINTABLE_RADIUS/delta.a;
+              calculated_feedrate += (fr_mm_s * radiusRatio * normalizedTheta);
+          }
+        }
+      const feedRate_t feedrate = calculated_feedrate;
+
     #else
       const feedRate_t feedrate = fr_mm_s;
     #endif
