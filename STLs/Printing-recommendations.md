@@ -52,6 +52,8 @@
 
 ## ---------------------------------------------------
 ## Structural parts
+### Printing parts with threads requires extra attention. I recommend to print 3D printed nuts a little under-flow. It helps preventing over-tight threads.
+### Consider printing following parts a little underflow : Rotary-axis-bearing-lock-nut.stl, Rotary-axis-preload-nut.stl, Z-axis-belt-tensioner-nut.stl
 - Wall count : min. 3
 - Infill density: min. 15%
 - Strength/surface: 50%
@@ -59,8 +61,8 @@
 - Extruder-body.stl
 - Hotend-body.stl
 - Main-body.stl
-- rotary-axis-bearing-lock-nut.stl
-- rotary-axis-bearing-spacer.stl
+- Rotary-axis-bearing-lock-nut.stl
+- Rotary-axis-bearing-spacer.stl
 - Rotary-axis-motor-mount-nut.stl
 - Rotary-axis-motor-mount-washer.stl
 - Rotary-axis-motor-mount.stl
@@ -74,7 +76,7 @@
 - Z-axis-belt-tensioner-nut
 - Z-axis-carriage.stl
 - Z-drive-tensioner.stl
-- Z-drive-top-support
+- Z-drive-top-support.stl
 
 ## ---------------------------------------------------
 ## Lightweight parts
