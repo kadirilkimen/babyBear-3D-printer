@@ -10,9 +10,10 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ! A laser cut toolhead will be added in a few weeks.
 ! A cnc milling toolhead will be added until February.
 ```
-# Firmware is ready!
-Now polar coordinates calculated in the firmware.
-You can just slice it and send to the machine.
+# Marlin now has Polar kinematics!
+Finally, I developed polar kinematics and the Marlin team merged it to the main distribution.
+That means you can just slice the model and send to the babyBear without post processing.
+
 
 <img src="/Media/babyBear.jpg" alt="babyBear" title="Optional title">
 
