@@ -49,7 +49,6 @@ Just like each machine, you must edit configuration.h and configuration_adv.h fi
 - If you don't have the recommended hardware, perform the hardware related configurations. 
 
 
-
 ## Recommended and tested hardware
 - MKS Robin nano v3 Board.
 - TMC 2209 drivers
