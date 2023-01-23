@@ -7,8 +7,8 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ```diff
 + All STL and BOM files have been updated.
 
-! A laser cut toolhead will be added in a few weeks.
-! A cnc milling toolhead will be added until February.
+! See the assembly animations on this link : https://kadirilkimen.com/babybear/assembly-animations/
+! Note that the animations are not final and not covers all the machine yet.
 ```
 # Marlin now has Polar kinematics!
 Finally, I developed polar kinematics and the Marlin team merged it to the main distribution.
