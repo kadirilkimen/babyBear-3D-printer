@@ -7,7 +7,7 @@ It's a complete 3D printer with quick change tool head. So the plan is making it
 ```diff
 + All STL and BOM files have been updated.
 
-! See the assembly animations on this link : https://kadirilkimen.com/babybear/assembly-animations/
+! See the assembly animations on this link : https://kadirilkimen.com/babybear/assemblyanimations/
 ! Note that the animations are not final and not covers all the machine yet.
 ```
 # Marlin now has Polar kinematics!
